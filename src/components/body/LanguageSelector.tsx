@@ -42,7 +42,7 @@ export const LanguageSelector: React.FC = () => {
     }),
     menuList: (provided) => ({
       ...provided,
-      padding: 0, // Remove padding from menu list
+      padding: 0,
       borderRadius: 4,
     }),
     indicatorSeparator: (provided) => ({
@@ -64,7 +64,7 @@ export const LanguageSelector: React.FC = () => {
       options={options}
       defaultValue={{ value: "en", label: "English" }}
       styles={customStyles}
-      onChange={handleChangeLanguage}
+      onChange={handleChangeLanguage as any}
     />
   );
 };
