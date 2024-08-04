@@ -1,4 +1,3 @@
-import React from "react";
 import { QuestionData } from "../../../utils/data";
 import { Question } from "./Question";
 

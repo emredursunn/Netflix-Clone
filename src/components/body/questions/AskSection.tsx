@@ -1,4 +1,3 @@
-import React from "react";
 import { AccordionContextProvider } from "../../../context/Context";
 import Box from "../Box";
 import { Accordion } from "./Accordion";

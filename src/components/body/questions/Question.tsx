@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { useSpring, animated } from "@react-spring/web";
 import { AccordionContext } from "../../../context/Context";
 import { useTranslation } from "react-i18next";
@@ -9,7 +9,7 @@ type Props = {
   index: number;
 };
 
-export const Question = ({ question, answer, index }: Props) => {
+export const Question = ({ index }: Props) => {
   const { selectedIndex, setSelectedIndex } = useContext(AccordionContext);
   const contentRef = useRef<HTMLDivElement>(null);
   const [contentHeight, setContentHeight] = useState(0);

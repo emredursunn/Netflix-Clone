@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Box from "../body/Box";
 import { footerData } from "../../utils/data";
 import { useTranslation } from "react-i18next";

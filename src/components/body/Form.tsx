@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 export const Form = () => {
@@ -9,7 +9,7 @@ export const Form = () => {
     setEmail(e.target.value);
   };
 
-  const handleSubmit = (e: any) => {};
+  const handleSubmit = () => {};
 
   return (
     <div className="flex flex-col justify-center items-center">
