@@ -1,3 +1,4 @@
+# Netflix Clone
+
 # React + Vite + TypeScript + Tailwindcss
 
-## Netflix Clone
