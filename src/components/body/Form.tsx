@@ -13,7 +13,7 @@ export const Form = () => {
 
   return (
     <div className="flex flex-col justify-center items-center">
-      <p className="text-wrap text-xl lg:text-2xl m-5">{t("Ready to watch")}</p>
+      <p className="text-wrap text-center text-xl lg:text-2xl m-5">{t("Ready to watch")}</p>
       <form
         className="flex flex-col lg:flex-row  gap-2 pb-10 justify-center items-center"
         onSubmit={handleSubmit}
