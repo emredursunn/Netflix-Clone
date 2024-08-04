@@ -4,4 +4,5 @@
 
 **https://netflix-clone-six-pink.vercel.app/**
 
-**Try it!**
+**Check it Out!**
+
