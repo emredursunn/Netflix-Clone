@@ -26,9 +26,8 @@ export const Phone = () => {
             <p className="font-bold text-lg">{movieName}</p>
             <p className="text-blue text-sm">{t("Downloading")}...</p>
           </div>
-          <div
-            className={`w-1/6 z-10 h-12 bg-contain bg-no-repeat ${`bg-[url(${gif})]`}`}
-          />
+          <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/download-icon.gif"
+            className="w-1/5 bg-cover"          />
         </div>
       </div>
     </Guidance>
