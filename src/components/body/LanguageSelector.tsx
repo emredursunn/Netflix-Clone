@@ -63,7 +63,7 @@ export const LanguageSelector: React.FC = () => {
     <Select
       options={options}
       defaultValue={{ value: "en", label: "English" }}
-      styles={customStyles}
+      //styles={customStyles}
       onChange={handleChangeLanguage}
     />
   );
