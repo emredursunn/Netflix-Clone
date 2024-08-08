@@ -8,6 +8,7 @@ import { useTranslation } from "react-i18next";
 export const AskSection = () => {
   const { t } = useTranslation();
 
+
   return (
     <AccordionContextProvider>
       <Box>

@@ -2,6 +2,8 @@ import { useContext, useEffect, useRef, useState } from "react";
 import { useSpring, animated } from "@react-spring/web";
 import { AccordionContext } from "../../../context/Context";
 import { useTranslation } from "react-i18next";
+import { delay, motion } from "framer-motion";
+import { FadeIn } from "../../../utils/variants";
 
 type Props = {
   question: string;
@@ -14,6 +16,7 @@ export const Question = ({ index }: Props) => {
   const contentRef = useRef<HTMLDivElement>(null);
   const [contentHeight, setContentHeight] = useState(0);
   const { t } = useTranslation();
+  const direction = index % 2 === 0 ? "right" : "left";
 
   useEffect(() => {
     if (contentRef.current) {
@@ -31,7 +34,12 @@ export const Question = ({ index }: Props) => {
   };
 
   return (
-    <div className="flex flex-col w-10/12 lg:w-2/3 h-full rounded-sm text-white">
+    <motion.div
+      variants={FadeIn({ direction: direction, delay: 0.1 * index })}
+      initial={"hidden"}
+      whileInView={"show"}
+      className="flex flex-col w-10/12 lg:w-2/3 h-full rounded-sm text-white"
+    >
       <button
         onClick={toggleAnswer}
         className="flex items-center justify-between bg-dark_gray hover:bg-opacity-90 w-full border-b-2 border-b-primary_1  px-6  py-2"
@@ -48,6 +56,6 @@ export const Question = ({ index }: Props) => {
           <p className="text-xl p-8 lg:p-4">{t(`answer${index + 1}`)}</p>
         )}
       </animated.div>
-    </div>
+    </motion.div>
   );
 };

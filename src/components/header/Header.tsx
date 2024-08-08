@@ -6,9 +6,10 @@ const Header = () => {
 
   return (
     <div className="flex absolute inset-0 w-screen h-20 px-5 xl:px-10 bg-transparent justify-around items-center">
-      <a className="text-3xl xl:text-5xl text-transparent bg-clip-text bg-primary_2 font-bold">
-        FILMOSOPH
+      <a className="text-3xl xl:text-5xl text-transparent bg-clip-text bg-primary_2 font-bold animate-bounce">
+        NETFLIX
       </a>
+
       <div className="flex gap-4">
         <LanguageSelector />
         <button className="py-2 px-4 rounded-lg font-bold bg-primary_2 text-white text-sm xl:text-l">
