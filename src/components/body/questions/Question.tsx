@@ -2,7 +2,7 @@ import { useContext, useEffect, useRef, useState } from "react";
 import { useSpring, animated } from "@react-spring/web";
 import { AccordionContext } from "../../../context/Context";
 import { useTranslation } from "react-i18next";
-import { delay, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { FadeIn } from "../../../utils/variants";
 
 type Props = {
