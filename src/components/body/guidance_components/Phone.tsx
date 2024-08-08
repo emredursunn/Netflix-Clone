@@ -1,5 +1,6 @@
 import Guidance from "./Guidance";
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 
 export const Phone = () => {
   const { t } = useTranslation();
@@ -26,8 +27,7 @@ export const Phone = () => {
             <p className="font-bold text-lg">{movieName}</p>
             <p className="text-blue text-sm">{t("Downloading")}...</p>
           </div>
-          <img src={gif}
-            className="w-1/5 bg-cover"          />
+          <img src={gif} className="w-1/5 bg-cover" />
         </div>
       </div>
     </Guidance>
