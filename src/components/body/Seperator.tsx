@@ -1,6 +1,6 @@
 const Seperator = () => {
   return (
-    <div className='bg-gray w-full py-2'/>
+    <div className='bg-gray w-full py-1 bg-opacity-30'/>
   )
 }
 

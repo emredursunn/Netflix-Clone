@@ -13,7 +13,7 @@ function App() {
     <div className="h-screen w-full">
       {/* Arka Plan ve Overlay */}
 
-      <motion.div variants={{ hidden: { opacity: 0 }, show: { opacity: 1, transition:{staggerChildren:0.25}  }}} initial="hidden" animate="show">
+      <motion.div className="h-full w-full" variants={{ hidden: { opacity: 0 }, show: { opacity: 1, transition:{staggerChildren:0.25}  }}} initial="hidden" animate="show">
         <div className="absolute h-full w-full inset-0 -z-10 overflow-x-hidden">
           <img
             className="w-full h-full object-cover scale-125 absolute bottom-48"
