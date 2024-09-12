@@ -20,7 +20,7 @@ Netflix Starter Page
  
 **Vite**
 
-**TypeScript**
+**Typescript**
 
 **Tailwindcss**
 
