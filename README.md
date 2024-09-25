@@ -1,5 +1,5 @@
 # Netflix Clone
-Netflix Starter Page
+I cloned Netflix web pages with using tailwindcss and react.
 
 ---
 
