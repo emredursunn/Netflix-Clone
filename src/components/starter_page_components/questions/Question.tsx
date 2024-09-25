@@ -42,7 +42,7 @@ export const Question = ({ index }: Props) => {
     >
       <button
         onClick={toggleAnswer}
-        className="flex items-center justify-between bg-dark_gray hover:bg-opacity-90 w-full border-b-2 border-b-primary_1  px-6  py-2"
+        className="flex items-center justify-between bg-gray-700 hover:bg-opacity-90 w-full border-b-2 border-b-black  px-6  py-2"
       >
         <span className="text-xl">{t(`question${index + 1}`)}</span>
         <span className="text-5xl">{index === selectedIndex ? "x" : "+"}</span>
@@ -50,7 +50,7 @@ export const Question = ({ index }: Props) => {
       <animated.div
         ref={contentRef}
         style={{ ...props }}
-        className="bg-dark_gray w-full flex flex-wrap overflow-y-auto"
+        className="bg-gray-700 w-full flex flex-wrap overflow-y-auto"
       >
         {index === selectedIndex && (
           <p className="text-xl p-8 lg:p-4">{t(`answer${index + 1}`)}</p>

@@ -1,21 +1,30 @@
 import { useTranslation } from "react-i18next";
-import { LanguageSelector } from "../body/LanguageSelector";
+import { LanguageSelector } from "../starter_page_components/LanguageSelector";
+import logo from "../../images/Logo.png"
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="flex absolute inset-0 w-screen h-20 px-5 xl:px-10 bg-transparent justify-around items-center">
-      <a className="text-3xl xl:text-5xl text-transparent bg-clip-text bg-primary_2 font-bold animate-bounce">
-        NETFLIX
-      </a>
+    <div className="flex w-screen h-20 px-5 xl:px-10 bg-transparent justify-around items-center">
+      <img className="w-24 md:w-48 md:h-16 h-12" src={logo} alt="logo"/>
 
-      <div className="flex gap-4">
+      <nav className="flex gap-4">
+        <div className="hidden sm:flex">
         <LanguageSelector />
-        <button className="py-2 px-4 rounded-lg font-bold bg-primary_2 text-white text-sm xl:text-l">
-          {t("Sign In")}
-        </button>
-      </div>
+        </div>
+        <Link to="/login">
+          <button className="py-2 px-4 rounded-lg font-bold bg-red-700 text-white text-sm xl:text-l">
+            {t("Sign In")}
+          </button>
+        </Link>
+        <Link to="/home">
+          <button className="py-2 px-4 rounded-lg font-bold bg-red-700 text-white text-sm xl:text-l">
+            {("Home")}
+          </button>
+        </Link>
+      </nav>
     </div>
   );
 };

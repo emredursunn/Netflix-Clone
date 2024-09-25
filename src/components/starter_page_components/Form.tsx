@@ -19,14 +19,14 @@ export const Form = () => {
         onSubmit={handleSubmit}
       >
         <input
-          className="bg-primary_1 text-white pr-24 bg-opacity-60 border-2 rounded-md border-gray p-3"
+          className="bg-black text-white pr-24 bg-opacity-60 border-2 rounded-md border-gray-700 p-3"
           placeholder={t("Email address")}
           type="email"
           value={email}
           onChange={handleEmailInputChange}
         />
         <button
-          className="bg-primary_2 hover:bg-opacity-80 lg:w-auto px-6 py-3 text-lg lg:text-xl bg-opacity-90 rounded-md font-bold"
+          className="bg-red-700 hover:bg-opacity-80 lg:w-auto px-6 py-3 text-lg lg:text-xl bg-opacity-90 rounded-md font-bold"
           type="submit"
         >
           {t("Get started")} {">"}
