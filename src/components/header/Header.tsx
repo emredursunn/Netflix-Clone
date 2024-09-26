@@ -1,10 +1,10 @@
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
 import { LanguageSelector } from "../starter_page_components/LanguageSelector";
 import logo from "../../images/Logo.png"
 import { Link } from "react-router-dom";
 
 const Header = () => {
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
 
   return (
     <div className="flex w-screen h-20 px-5 xl:px-10 bg-transparent justify-around items-center">
@@ -14,11 +14,11 @@ const Header = () => {
         <div className="hidden sm:flex">
         <LanguageSelector />
         </div>
-        <Link to="/login">
+        {/* <Link to="/login">
           <button className="py-2 px-4 rounded-lg font-bold bg-red-700 text-white text-sm xl:text-l">
             {t("Sign In")}
           </button>
-        </Link>
+        </Link> */}
         <Link to="/home">
           <button className="py-2 px-4 rounded-lg font-bold bg-red-700 text-white text-sm xl:text-l">
             {("Home")}

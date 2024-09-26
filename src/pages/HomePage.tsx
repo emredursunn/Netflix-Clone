@@ -88,7 +88,7 @@ export default function HomePage() {
               {selectedMovie?.overview.substring(0, 300)}
               {selectedMovie && selectedMovie.overview.length > 300 ? '...' : ''}
             </span>
-          </p>{" "}
+          </p>
           <div className="flex space-x-4">
             <button className="flex bg-white text-black hover:bg-gray-200 hover:scale-125 transition-all duration-300  py-2 px-6 items-center justify-center  rounded-md">
               <Play className="mr-2 h-4 w-4" />
