@@ -5,7 +5,7 @@ import { Monitor } from "../components/starter_page_components/guidance_componen
 import Kids from "../components/starter_page_components/guidance_components/Kids";
 import { AskSection } from "../components/starter_page_components/questions/AskSection";
 import { motion } from "framer-motion";
-import Header from "../components/header/Header";
+import HeaderStarter from "../components/starter_page_components/HeaderStarter";
 
 const StarterPage = () => {
   return (
@@ -25,7 +25,7 @@ const StarterPage = () => {
           {/* Overlay */}
           <div className="absolute inset-0 bg-black bg-opacity-50" />
         </div>
-        <Header />
+        <HeaderStarter />
         <Start />
       </div>
       <TV />
