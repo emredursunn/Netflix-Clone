@@ -13,7 +13,7 @@ type Props = {
 const Guidance = ({ title, description, reverse, children }: Props) => {
   return (
     <Box>
-      <div
+      <section
         className={`flex flex-col ${
           reverse ? "lg:flex-row-reverse" : "lg:flex-row"
         } lg:gap-20 justify-center py-12 items-center`}
@@ -27,10 +27,10 @@ const Guidance = ({ title, description, reverse, children }: Props) => {
           whileInView={"show"}
           viewport={{once:true, amount:0.7}}
         >
-          <div className="flex flex-col gap-6 text-center flex-wrap max-w-md">
-            <p className="text-3xl lg:text-5xl font-bold">{title}</p>
-            <p className="text-xl lg:text-2xl">{description}</p>
-          </div>
+          <article className="flex flex-col gap-6 text-center flex-wrap max-w-md">
+            <label className="text-3xl lg:text-5xl font-bold">{title}</label>
+            <span className="text-xl lg:text-2xl">{description}</span>
+          </article>
         </motion.div>
         <motion.div
           variants={FadeIn({
@@ -42,7 +42,7 @@ const Guidance = ({ title, description, reverse, children }: Props) => {
         >
           {children}
         </motion.div>
-      </div>
+      </section>
     </Box>
   );
 };

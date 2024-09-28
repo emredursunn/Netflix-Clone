@@ -13,7 +13,7 @@ export const Phone = () => {
 
   return (
     <Guidance title={title} description={description} reverse={true}>
-      <div className="relative flex">
+      <figure className="relative flex">
         {/* TV frame */}
         <img className="object-cover" src={image} alt="Phone frame" />
         {/* Video inside TV frame */}
@@ -22,13 +22,13 @@ export const Phone = () => {
           className="absolute flex bottom-7 w-3/5 bg-black py-3 rounded-2xl border-2 items-center"
         >
           <img className="w-1/3 h-16 object-contain" src={cover} />
-          <div className="w-1/2">
+          <figcaption className="w-1/2">
             <p className="font-bold text-lg">{movieName}</p>
             <p className="text-blue-700 text-sm">{t("Downloading")}...</p>
-          </div>
+          </figcaption>
           <img src={gif} className="w-1/5 bg-cover" />
         </div>
-      </div>
+      </figure>
     </Guidance>
   );
 };

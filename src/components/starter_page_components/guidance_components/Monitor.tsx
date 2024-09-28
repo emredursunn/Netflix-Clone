@@ -12,7 +12,7 @@ export const Monitor = () => {
   const description = t("Stream unlimited");
   return (
     <Guidance title={title} description={description} reverse={false}>
-      <div className="relative flex">
+      <figure className="relative flex">
         <img className="z-10 object-cover" src={image} />
         <video
           muted
@@ -22,7 +22,7 @@ export const Monitor = () => {
           className="absolute inset-0 object-cover"
           src={video}
         ></video>
-      </div>
+      </figure>
     </Guidance>
   );
 };

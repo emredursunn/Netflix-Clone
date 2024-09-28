@@ -10,7 +10,7 @@ export const TV = () => {
   const description = t("Watch on Platforms");
   return (
     <Guidance title={title} description={description} reverse={false}>
-      <div className="relative flex">
+      <figure className="relative flex">
         {/* TV frame */}
         <img className="z-10 object-cover" src={image} alt="TV frame" />
         {/* Video inside TV frame */}
@@ -22,7 +22,7 @@ export const TV = () => {
           autoPlay
           src={video}
         />
-      </div>
+      </figure>
     </Guidance>
   );
 };
