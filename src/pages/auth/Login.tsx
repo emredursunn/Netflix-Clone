@@ -1,56 +1,104 @@
-// import { FormEvent, useState } from "react";
-// import { useDispatch } from "react-redux";
-// import { authLogin } from "../../store/authSlice";
-// import logo from "../../images/Logo.png";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { login } from "../../store/authSlice";
+import { showToast } from "../../components/shared_components/Toast";
+import { useNavigate } from "react-router-dom";
 
-// const Login = () => {
-//   const [email, setEmail] = useState("");
-//   const [password, setPassword] = useState("");
+export default function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
+  const navigate = useNavigate()
 
-//   const dispatch = useDispatch();
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+      dispatch(login({ email, password }));
+      showToast("Successful","success")
+      navigate("/home")
+    } catch (error) {
+      console.log(error);
+      showToast("Failed","error")
+    }
+  };
 
-//   const handleSubmit = (e: FormEvent) => {
-//     e.preventDefault();
-//     dispatch(authLogin({ email, password }));
-//     alert("Logged in");
-//   };
-
-//   return (
-//     <div
-//       className="w-screen h-screen flex items-center justify-center bg-primary_1 bg-cover bg-center"
-//       style={{
-//         backgroundImage:
-//           "url(https://assets.nflxext.com/ffe/siteui/vlv3/826348c2-cdcb-42a0-bc11-a788478ba5a2/88b6b959-4086-4bd6-80f2-e8c48634649d/TR-tr-20240729-POP_SIGNUP_TWO_WEEKS-perspective_WEB_1293bc84-dc0d-4926-ad85-bbec70c1f97a_small.jpg)",
-//       }}
-//     >
-//       <div className="w-full h-full bg-primary_1 bg-opacity-40 absolute inset-0" />
-//       <img src={logo} className="w-48 absolute top-10 left-10" alt="Logo" />
-
-//       <div className="p-12 bg-primary_1 bg-opacity-80 rounded-md">
-        
-
-// <form className="max-w-sm mx-auto">
-//   <div className="mb-5">
-//     <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
-//     <input value={email} onChange={e=> setEmail(e.target.value)} type="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@flowbite.com" required />
-//   </div>
-//   <div className="mb-5">
-//     <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your password</label>
-//     <input value={password} onChange={e=> e.target.value} type="password" id="password" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
-//   </div>
-//   <div className="flex items-start mb-5">
-//     <div className="flex items-center h-5">
-//       <input id="remember" type="checkbox" value="" className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800" required />
-//     </div>
-//     <label htmlFor="remember" className="ms-2 text-sm font-medium text-blue dark:text-gray-300">Remember me</label>
-//   </div>
-//   <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
-// </form>
-
-
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Login;
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-black md:bg-opacity-50 md:bg-blend-overlay bg-no-repeat bg-center bg-cover md:bg-[url('https://assets.nflxext.com/ffe/siteui/vlv3/826348c2-cdcb-42a0-bc11-a788478ba5a2/88b6b959-4086-4bd6-80f2-e8c48634649d/TR-tr-20240729-POP_SIGNUP_TWO_WEEKS-perspective_WEB_1293bc84-dc0d-4926-ad85-bbec70c1f97a_small.jpg')]">
+      <section className="w-full max-w-xl md:max-w-md p-8 space-y-8 bg-black bg-opacity-75 rounded-lg">
+        <div className="text-center">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
+            alt="Netflix Logo"
+            className="h-12 mx-auto mb-6"
+          />
+          <h2 className="text-3xl font-bold text-white">Sign In</h2>
+        </div>
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <div>
+            <label htmlFor="email" className="sr-only">
+              Email address
+            </label>
+            <input
+              id="email"
+              type="email"
+              placeholder="Email address"
+              required
+              className="w-full py-2 px-1 bg-transparent border-white border border-opacity-30 text-white placeholder-gray-400 rounded"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+          <div>
+            <label htmlFor="password" className="sr-only">
+              Password
+            </label>
+            <input
+              id="password"
+              type="password"
+              placeholder="Password"
+              required
+              className="w-full py-2 px-1 bg-transparent border-white border border-opacity-30 text-white placeholder-gray-400 rounded"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <button
+            type="submit"
+            className="w-full py-2 rounded bg-red-600 hover:bg-red-700 text-white"
+          >
+            Sign In
+          </button>
+          <div className="flex items-center justify-between">
+            <div className="flex items-center">
+              <input
+                type="checkbox"
+                id="remember-me"
+                className="text-red-600 border-gray-600 bg-gray-700"
+              />
+              <label
+                htmlFor="remember-me"
+                className="ml-2 text-sm text-gray-400"
+              >
+                Remember me
+              </label>
+            </div>
+            <div className="text-sm">
+              <a href="#" className="text-gray-400 hover:underline">
+                Need help?
+              </a>
+            </div>
+          </div>
+        </form>
+        <div className="text-gray-400 text-center">
+          <p>
+            New to Netflix?{" "}
+            <a href="#" className="text-white hover:underline">
+              Sign up now
+            </a>
+            .
+          </p>
+        </div>
+      </section>
+    </div>
+  );
+}
