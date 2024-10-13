@@ -9,9 +9,9 @@ I cloned Netflix web pages with using tailwindcss and react.
 
 ---
 
-## Images 
+
 <img src="https://github.com/user-attachments/assets/387cfd22-d996-4627-b468-0a8714bb6ec7" width=400 height=600 />
-<img src="https://github.com/user-attachments/assets/46e8305a-f4ba-4197-8147-e9c44a61cdfa"  width=400 height=600 />
+<img src="https://github.com/user-attachments/assets/1484b2d6-4fba-4e94-8614-2cd92b05742a"  width=400 height=600 />
 
 ---
 
